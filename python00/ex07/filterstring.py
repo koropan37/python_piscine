@@ -2,16 +2,19 @@ import sys
 
 
 def main():
-    sys.tracebacklimit = 0
+    """Docstring for main."""
+    try:
+        assert len(sys.argv) == 3, "the arguments are bad"
 
-    assert len(sys.argv) == 3, "the arguments are bad"
+        try:
+            num = int(sys.argv[2])
+        except ValueError:
+            raise AssertionError("argument are bad")
+
+    except AssertionError as e:
+        print(f"AssertionError: {e}")
 
     text = sys.argv[1]
-    try:
-        num = int(sys.argv[2])
-    except ValueError:
-        raise AssertionError("argument are bad") from None
-
     words = [word for word in text.split() if len(word) > num]
     # if len(word) > num が True の word を words に
     print(words)

@@ -3,11 +3,15 @@ import string
 
 
 def main():
-    sys.tracebacklimit = 0
+    """Docstring for main."""
 
-    assert len(sys.argv) <= 2, "more than one argument is provided"
+    try:
+        assert len(sys.argv) <= 2, "more than one argument is provided"
+    except AssertionError as e:
+        print(f"AssertionError: {e}")
+        return
 
-    if len(sys.argv) == 2:
+    if len(sys.argv) == 2 and sys.argv[1]:
         text = sys.argv[1]
     else:
         try:
@@ -39,7 +43,7 @@ def main():
     print(f"{lower_cnt} lower letters")
     print(f"{punctuation_cnt} punctuation marks")
     print(f"{space_cnt} spaces")
-    print(f"{digit_cnt} disits")
+    print(f"{digit_cnt} digits")
 
 
 if __name__ == "__main__":
