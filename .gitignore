@@ -1,0 +1,10 @@
+tester.py
+__pycache__/
+*.pyc
+
+pdf
+
+dist/
+*.egg-info/
+build/
+.DS_Store
