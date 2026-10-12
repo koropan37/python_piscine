@@ -1,6 +1,7 @@
 tester.py
 __pycache__/
 *.pyc
+*.csv
 
 pdf
 
